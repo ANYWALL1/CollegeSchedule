@@ -24,5 +24,13 @@ namespace CollegeSchedule.Controllers
             // Возвращаем результат со статусом 200 OK
             return Ok(result);
         }
+
+        // GET: api/schedule/groups
+        [HttpGet("groups")]
+        public async Task<IActionResult> GetGroups()
+        {
+            var groups = await _service.GetAllGroups();
+            return Ok(groups);
+        }
     }
 }
